@@ -1,3 +1,4 @@
+// Самодельный таймер как-то так
 package com.example.myapplication;
 
 import android.os.Bundle;
@@ -13,8 +14,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView timeText;
     private Button startButton, timerButton;
     private Handler handler;
-    private boolean isStopped; // Флаг для определения, запущен ли таймер
-    private boolean isForward = true; // Флаг для определения, идёт ли таймер вперёд
+    private boolean isStopped; 
+    private boolean isForward = true; 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Если таймер не запущен - запускаем его
+
                 if (!isStopped) {
                     startTimer();
                     startButton.setText("Stop");
-                } else { // иначе останавливаем его
+                } else { 
                     stopTimer();
                     startButton.setText("Start");
                 }
@@ -45,14 +46,14 @@ public class MainActivity extends AppCompatActivity {
         timerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Меняем направление таймера
+            
                 isForward = !isForward;
             }
         });
     }
 
     private void startTimer() {
-        isStopped = true; // Устанавливаем флаг, что таймер запущен
+        isStopped = true; 
         handler.post(new Runnable() {
             int seconds = 0;
             int minutes = 0;
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                if (isForward) { // Если таймер идёт вперед
+                if (isForward) { 
                     seconds++;
                     if (seconds == 60) {
                         seconds = 0;
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                         minutes = 0;
                         hours++;
                     }
-                } else { // Если таймер идёт назад
+                } else { 
                     seconds--;
                     if (seconds == -1) {
                         seconds = 59;
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                         hours--;
                     }
                 }
-                // Отображаем время на экране
+             
                 timeText.setText(String.format("%02d:%02d:%02d", hours, minutes, seconds));
                 handler.postDelayed(this, 1000);
             }
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void stopTimer() {
-        isStopped = false; // Устанавливаем флаг, что таймер остановлен
-        handler.removeCallbacksAndMessages(null); // Останавливаем новую задачу из Handler
+        isStopped = false; 
+        handler.removeCallbacksAndMessages(null); 
     }
 }
