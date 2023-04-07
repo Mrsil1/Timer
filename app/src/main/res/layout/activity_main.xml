@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarSize="7dp"
+    android:textAlignment="textEnd"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="59dp"
+        android:layout_height="43dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="154dp"
+        android:layout_marginEnd="50dp"
+        android:text="Мяу"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/time_text"
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="117dp"
+        android:layout_marginTop="271dp"
+        android:text="00:00:00"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/time_text"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="252dp"
+        android:text="Стартуеем!" />
+
+    <Button
+        android:id="@+id/timer_button"
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/time_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="250dp"
+        android:layout_toRightOf="@id/start_button"
+        android:text="ЗААДНИЙ ХОД" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="153dp"
+        android:text="Мяу"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="151dp"
+        android:layout_height="54dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:text="Ну это, типо секундомер :D"
+        android:textSize="20sp" />
+
+</RelativeLayout>
